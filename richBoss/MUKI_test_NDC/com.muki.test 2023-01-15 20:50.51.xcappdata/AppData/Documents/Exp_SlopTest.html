@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <title>YEN | 聚散能力檢測</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3.0, user-scalable=1">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/common/css/tailwind.min.css">
+    <link rel="stylesheet" type="text/css" href="/common/css/page-common.css">
+    <link rel="stylesheet" type="text/css" href="/common/css/line-arrow.css">
+    <!-- JS -->
+    <script type="text/javascript" src="/common/js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="/common/js/sweetalert2@10.js"></script>
+    <script type="text/javascript" src="/common/js/SMethods.js"></script>
+    <script type="text/javascript" src="/common/js/localforage.min.js"></script>
+    <script type="text/javascript" src="/common/js/pages/TrainingMode.js"></script>
+    <script type="text/javascript" src="/common/js/pages/Exp_VisionCommon.js"></script>
+    <script type="text/javascript" src="/app/js/Exp_SlopTest.js"></script>
+    <style>
+        option {
+            text-indent: 5px;
+        }
+
+        .divOptotype {
+            min-height: 35mm;
+        }
+
+        .divBOTest {
+            background: #ff9966; /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #ff5e62, #ff9966); /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #ff5e62, #ff9966); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        }
+
+        .divBITest {
+            background-color: #21D4FD;
+            background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+        }
+
+        .divRecord {
+            background-image: linear-gradient(to right, #EB3349 0%, #F45C43 51%, #EB3349 100%);
+            margin: 10px;
+            padding: 15px 45px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            display: block;
+            animation-name: kfRecord;
+            animation-duration: 3s;
+            animation-delay: 1s;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes kfRecord {
+            from {
+            }
+            to {
+                background-position: right center; /* change the direction of the change here */
+                color: #fff;
+                text-decoration: none;
+            }
+        }
+
+        .imgEyeGT {
+            min-width: 50px;
+            max-height: 120px;
+            min-height: 120px;
+        }
+
+    </style>
+    <!-- When no JavaScript -->
+    <noscript>
+        <div class="noscriptmsg">
+            請開啟JavaScript瀏覽
+        </div>
+    </noscript>
+</head>
+<body class="HunInn flex flex-col flex-shrink-0 w-full h-screen bg-gray-700" style="display: none;">
+<!--Normal 最後歷史紀錄 & 開始檢測-->
+<div id="divNormal" class="flex flex-col items-center w-full">
+    <!-- 歷史紀錄 -->
+    <div class="flex flex-col p-2 w-full items-center justify-center text-center" style="min-height: 30vh;">
+        <p class="divBOTest py-2 my-2 w-full text-white text-2xl tracking-widest  rounded-lg">歷史紀錄</p>
+        <div class="flex flex-row items-center w-full my-2" style="min-height: 50px;">
+            <div class="flex flex-col flex-1 items-center">
+                <p class="text-xl text-white py-2">BO 斜位量</p>
+                <p class="text-2xl text-gray-200 py-2" id="pSlopBO">0</p>
+            </div>
+            <div class="flex flex-col flex-1 items-center">
+                <p class="text-xl text-white py-2">BI 斜位量</p>
+                <p class="text-2xl text-gray-200 py-2" id="pSlopBI">0</p>
+            </div>
+        </div>
+    </div>
+    <!-- 分割線 -->
+    <div class="w-full bg-gray-500 my-4" style="min-height: 1px;"></div>
+    <!-- 選擇測試模式 BI BO-->
+    <p class="my-2 w-full text-center text-white text-2xl tracking-widest ">選擇您看見的圖像進行檢測</p>
+    <div class="flex flex-row items-center my-4 w-full text-xl text-white tracking-widest ">
+        <div class="flex flex-col flex-1 px-2 items-center">
+            <div class="flex flex-col w-full items-center justify-center bg-white rounded-lg">
+                <img class="imgArea" src="/app/image/SlopTest/img_dot_line.png" alt="area"
+                     style="max-height: 80px; ">
+            </div>
+            <button class="divBOTest my-2 w-full rounded-lg"
+                    style="min-height: 100px;"
+                    onclick="GoStepHandler(1,'BO')">開始BO檢測
+            </button>
+        </div>
+        <div class="flex flex-col flex-1 px-2 items-center">
+            <div class="flex flex-col w-full items-center justify-center bg-white rounded-lg">
+                <img class="imgArea" src="/app/image/SlopTest/img_dot_line.png" alt="area"
+                     style="max-height: 80px;transform: rotate(180deg)">
+            </div>
+            <button class="divBITest my-2 w-full rounded-lg"
+                    style="min-height: 100px;"
+                    onclick="GoStepHandler(1,'BI')">開始BI檢測
+            </button>
+        </div>
+    </div>
+</div>
+
+<!--Step 1 檢測中畫面 紀錄按紐-->
+<div id="divStep1" class="flex flex-col items-center w-full">
+    <!-- 眼睛圖 -->
+    <div class="flex flex-row w-full items-center justify-center">
+        <div class="flex-1" style="position: relative; ">
+            <img class="imgEyeGT px-1 my-2 w-full object-contain" alt="app.image" src="/common/image/ic_eye.png"
+                 style="-webkit-transform: scaleX(-1);transform: scaleX(-1);"/>
+            <div id="divArrow_L" class="arrow flex flex-col items-center" style="zoom: 0.5;">
+                <div class="point"></div>
+                <div class="line"></div>
+                <div class="center"></div>
+            </div>
+            <div class="flex flex-col items-center" style="position: absolute;bottom: 20%;left: calc(50% - 25px);">
+                <p id="pCDegree_L" class="text-white text-base text-center" style="min-width: 50px;">0°</p>
+            </div>
+        </div>
+        <div class="flex-1" style="position: relative; ">
+            <img class="imgEyeGT px-1 my-2 w-full object-contain" alt="app.image" src="/common/image/ic_eye.png"
+            />
+            <div id="divArrow_R" class="arrow flex flex-col items-center" style="zoom: 0.5;">
+                <div class="point"></div>
+                <div class="line"></div>
+                <div class="center"></div>
+            </div>
+            <div class="flex flex-col items-center" style="position: absolute;bottom: 20%;left: calc(50% - 25px);">
+                <p id="pCDegree_R" class="text-white text-base text-center" style="min-width: 50px;">0°</p>
+            </div>
+        </div>
+    </div>
+    <!-- 提示內容 -->
+    <p class="text-2xl text-white text-center py-2">當您看見 點線合一 時按一下按鈕</p>
+    <!-- 注視區域 -->
+    <div class="flex flex-col w-full items-center justify-center bg-white" style="max-height: 40mm">
+        <img id="imgSlop" class="imgArea" src="/app/image/SlopTest/img_dot_line.png" alt="area" style="max-height: 40mm;">
+    </div>
+    <!-- 按我記錄 -->
+    <div class="flex flex-col items-center justify-center w-full">
+        <button id="btRecord"
+                class="divRecord w-2/3 my-4 text-2xl text-white  tracking-widest rounded-lg focus:outline-none">
+            按我記錄
+        </button>
+    </div>
+    <!-- 分割線 -->
+    <div class="w-full bg-gray-500" style="min-height: 1px;"></div>
+    <!-- 模式進度、取消 -->
+    <div id="divRun" class="flex flex-col w-full items-center" style="display: none;">
+        <p id="pCMode" class="my-2 text-white text-3xl tracking-widest "></p>
+        <p id="pCType" class="my-1 text-gray-300 text-lg tracking-widest  hidden"></p>
+        <div class="flex flex-row px-2 my-2 items-center w-full">
+            <p class="px-2 min-w-max text-white text-xl tracking-widest ">執行進度</p>
+            <div class="mx-2 flex-grow bg-gray-700 rounded-lg h-6" style="max-width: 300px;">
+                <div id="divProgress"
+                     class="flex flex-row w-full items-center justify-center bg-blue-600 h-6 rounded-lg text-white text-sm text-center"
+                     style="width: 0%;transition-duration: 200ms;">0%
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-row items-center justify-center w-full my-2 text-white text-lg tracking-widest ">
+            <p class="mx-2">剩餘時間:</p>
+            <p id="pRemainTime"></p>
+        </div>
+        <button class="px-8 py-1 my-2 text-xl text-white bg-red-600 rounded-lg" onclick="StopTrain()">立即停止</button>
+    </div>
+</div>
+</body>
+</html>

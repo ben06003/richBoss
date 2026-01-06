@@ -1,0 +1,11 @@
+framework module Ensoul_ParkingManager {
+  umbrella header "Ensoul_ParkingManager.h"
+
+  export *
+  module * { export * }
+}
+
+module Ensoul_ParkingManager.Swift {
+    header "Ensoul_ParkingManager-Swift.h"
+    requires objc
+}

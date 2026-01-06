@@ -1,0 +1,34 @@
+.arrow {
+    position: absolute;
+    bottom: calc(50% - 8px);
+    left: calc(50% - 10px);
+    height: 65px;
+    transform-origin: 50% calc(100% - 10px);
+    transition-duration: 500ms;
+}
+
+.point {
+    width: 0;
+    height: 0;
+    margin-bottom: -2px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 30px solid #00BFFF;
+    float: top;
+}
+
+.line {
+    height: 30px;
+    width: 7px;
+    float: bottom;
+    background: #00BFFF;
+}
+
+.center {
+    width: 16px;
+    height: 16px;
+    margin-top: -5px;
+    float: bottom;
+    border-radius: 8px;
+    background: #00BFFF;
+}

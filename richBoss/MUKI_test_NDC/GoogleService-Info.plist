@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>724895198710-vg15j5l23jivtnt4j9m5o2s9umch9dl0.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.724895198710-vg15j5l23jivtnt4j9m5o2s9umch9dl0</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>724895198710-2lt90oupi00ltpot9aug3b30oo830so4.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyD5M_lR3ZYMHnt69t6G_sFk988ksIR8Iys</string>
+	<key>GCM_SENDER_ID</key>
+	<string>724895198710</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.soga.richboss</string>
+	<key>PROJECT_ID</key>
+	<string>richboss-481705</string>
+	<key>STORAGE_BUCKET</key>
+	<string>richboss-481705.firebasestorage.app</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:724895198710:ios:afd9be53ceb6b9a089ebd7</string>
+</dict>
+</plist>

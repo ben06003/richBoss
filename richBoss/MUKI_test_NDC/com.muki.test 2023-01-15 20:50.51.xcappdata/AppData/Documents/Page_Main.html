@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <title>YEN | 視力訓練</title>
+    <!-- 常見此寫法 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- JavaScript -->
+    <script type="text/javascript" src="/common/js/sweetalert2@10.js"></script>
+    <script type="text/javascript" src="/common/js/socket/WebSocketHandler.js"></script>
+    <script type="text/javascript" src="/common/js/jquery-3.5.1.min.js"></script>
+    <!--    <script type="text/javascript" src="/common/app/js/vconsole.min.js"></script>-->
+    <script type="text/javascript" src="/common/js/SMethods.js"></script>
+    <script type="text/javascript" src="/app/js/Page_Main.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/common/css/page-common.css">
+    <link rel="stylesheet" type="text/css" href="/common/css/tailwind.min.css">
+    <style>
+        .pNavSelected {
+            color: #95CF96;
+        }
+    </style>
+    <!-- When no JavaScript -->
+    <noscript>
+        <div class="noscriptmsg">
+            請啟用JS功能
+        </div>
+    </noscript>
+</head>
+<body class="w-screen h-screen" style="background-image: url('/common/image/back_green.png');background-size: cover;">
+<!--Header-->
+<div id="divHeader" class="flex flex-row items-center justify-center py-2 w-full bg-white relative hidden"
+     style="min-height: 50px;max-height: 50px;">
+    <img id="imgFunc" class="absolute py-2 object-contain hidden" src="/common/image/ic_back_green.png"
+         style="left: 10px;top:calc(50% - 18px);max-height: 36px;"
+         onclick="callHeaderFunc()" alt="back">
+    <p id="pTitle" class="text-gray-900 text-2xl tracking-widest" onclick="refreshIFPage()"></p>
+</div>
+<!-- iFrame -->
+<div id="divIframe" class="flex-shrink-0 w-full h-full"
+     style="min-height: calc(100% - 60px);max-height:calc(100% - 60px); ">
+    <iframe id="ifMain" class="w-full h-full" name="iframeMain"
+            onload="iframeOnLoad()"></iframe>
+</div>
+<!--Foot Bar-->
+<div id="divFoot" class="flex flex-row items-center bg-white" style="min-height: 60px;">
+    <!-- 首頁 -->
+    <div class="flex flex-col flex-1 items-center justify-center h-full pt-1" onclick="GoPage('Page_Home')">
+        <img id="imgHome" class="object-contain"
+             style="max-height: 25px;"
+             src="/app/image/Page_Main/ic_home.png"
+             alt="app">
+        <p id="pHome" class="mt-1 text-sm tracking-widest text-gray-400">首頁</p>
+    </div>
+    <!-- 訓練 -->
+    <div class="flex flex-col flex-1 items-center justify-center h-full pt-1" onclick="GoPage('Page_Train')">
+        <img id="imgTrain" class="object-contain"
+             style="max-height: 25px;"
+             src="/app/image/Page_Main/ic_train.png"
+             alt="app">
+        <p id="pTrain" class="mt-1 text-sm tracking-widest text-gray-400">訓練</p>
+    </div>
+    <!-- 紀錄 -->
+    <div class="flex flex-col flex-1 items-center justify-center h-full pt-1" onclick="GoPage('Page_History')">
+        <img id="imgHistory" class="object-contain"
+             style="max-height: 25px;"
+             src="/app/image/Page_Main/ic_history.png"
+             alt="app">
+        <p id="pHistory" class="mt-1 text-sm tracking-widest text-gray-400">紀錄</p>
+    </div>
+    <!-- 我的 -->
+    <div class="flex flex-col flex-1 items-center justify-center h-full pt-1" onclick="GoPage('Page_Mine')">
+        <img id="imgMine" class="object-contain"
+             style="max-height: 25px;"
+             src="/app/image/Page_Main/ic_mine.png"
+             alt="app">
+        <p id="pMine" class="mt-1 text-sm tracking-widest text-gray-400">我的</p>
+    </div>
+</div>
+<p id="pNetMode" class="w-full text-white text-sm bg-red-500 hidden">離線模式</p>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <title>登入</title>
+    <!-- NO CACHE-->
+    <meta http-equiv="Pragma" CONTENT="NO-CACHE">
+    <!-- IE可能不見得有效 -->
+    <meta http-equiv="Expires" CONTENT="0">
+    <!-- 設定成馬上就過期 -->
+    <meta http-equiv="Cache-Control" CONTENT="NO-CACHE">
+    <!-- 與第一行是同樣的作用 -->
+    <meta http-equiv="Expires" CONTENT="Mon, 22 Jul 2002 11:12:01 GMT">
+    <!-- 常見此寫法 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- When no JavaScript -->
+    <noscript>
+        <div>
+            請啟用JavaScript以瀏覽網頁
+        </div>
+    </noscript>
+
+    <!-- Firebase Auth -->
+    <script src="/common/js/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.13.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.13.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/6.0.2/firebase-ui-auth__zh_tw.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.2/firebase-ui-auth.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.19.0/js/md5.min.js"></script>
+    <!-- 匯入 -->
+    <script type="text/javascript" src="/common/js/sweetalert2@10.js"></script>
+    <script type="text/javascript" src="/common/js/js.cookie.min.js"></script>
+    <script type="text/javascript" src="/common/js/SMethods.js"></script>
+    <script type="text/javascript" src="/app/js/Page_Login.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/common/css/tailwind.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <style>
+        .divLogin {
+            min-width: 300px;
+            min-height: 400px;
+        }
+
+        @media screen and (min-width: 768px) {
+            .divLogin {
+                min-width: 600px;
+                min-height: 450px;
+            }
+        }
+    </style>
+
+</head>
+<body class="w-screen h-screen px-6"
+      style="background-image: url('/common/image/back_green.png');background-size: cover;">
+<div class="flex flex-col items-center justify-center w-full h-full">
+    <!-- app icon -->
+    <img class="object-contain mb-20"
+         style="min-height: 40px;max-height: 40px;"
+         src="/common/image/ic_ortho_text.png"
+         alt="menu">
+    <!-- login section -->
+    <div class="divLogin flex flex-col items-center justify-center p-4 bg-white rounded-lg">
+        <h1 class="text-gray-900 font-bold text-2xl text-center mb-2">登入您的帳戶</h1>
+        <p id="pHint" class="text-gray-700 text-lg text-center m-2">登入作業處理中，請稍後...</p>
+        <button id="btFunc" class="p-2 text-white bg-blue-600 rounded-lg hidden">Function</button>
+        <div id="firebaseui-auth-container" class="hidden"></div>
+    </div>
+</div>
+</body>
+</html>
+

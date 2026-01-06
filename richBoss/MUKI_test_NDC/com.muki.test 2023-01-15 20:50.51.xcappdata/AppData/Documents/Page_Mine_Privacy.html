@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <title>YEN | 服務條款 & 隱私條款</title>
+    <!-- 常見此寫法 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- JavaScript -->
+    <script type="text/javascript" src="/common/js/SMethods.js"></script>
+    <script>
+        //Param
+        let ParseURL = new URL(window.location.href);
+        let Params = ParseURL.searchParams;
+        let ShowHeader = GetParam(Params, "ShowHeader");
+        if (ShowHeader === "T") ClassRemover(GetEID("divHeader"), "hidden");//來自登入頁面
+        else {//來自 我的 頁面
+            top.SetHeaderInfo("隱私政策", () => {
+                top.GoPage("Page_Mine");
+            })
+        }
+
+    </script>
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/common/css/page-common.css">
+    <link rel="stylesheet" type="text/css" href="/common/css/tailwind.min.css">
+
+    <!-- When no JavaScript -->
+    <noscript>
+        <div class="noscriptmsg">
+            請啟用JS功能
+        </div>
+    </noscript>
+</head>
+<body class="flex flex-col items-center w-screen h-screen"
+      style="background-image: url('/common/image/back_green.png')">
+<!--Header-->
+<div id="divHeader" class="flex flex-row items-center justify-center py-2 w-full bg-white relative hidden">
+    <img class="absolute py-2 object-contain" src="/common/image/ic_back_green.png"
+         style="left: 10px;top:calc(50% - 18px);max-height: 36px;"
+         onclick="location.href='/html/Page_Login.html'" alt="back">
+    <p class="text-gray-900 text-2xl tracking-widest">服務條款 & 隱私條款</p>
+</div>
+<!--Content-->
+<p class="px-4 py-2 overflow-y-scroll">
+    歡迎使用「ORTHO」（以下簡稱本系統），為了讓您能夠安心的使用本系統各項服務與資訊，特此向您說明本系統的隱私權保護政策，請您詳閱下列內容：<br><br>
+
+    一、適用範圍<br>
+    隱私權保護政策內容，適用於您在使用本系統及其延伸服務時，所收集到的個人識別資料。本系統以外的相關連結網站，則須參考該網站的隱私權保護政策。<br><br>
+
+    二、個人資料的蒐集、處理及利用方式<br>
+    • 當您註冊本系統或參與系統所舉辦之活動或課程時，我們將視業務或活動性質請您提供必要的個人資料，您的資料將會儲存在本系統資料庫中使用，僅供推廣或行銷相關服務時做為使用。<br>
+    • 本系統會保留您在瀏覽或者查詢時，伺服器會存取所產生的相關紀錄，包括連線設備IP位置、使用時間、瀏覽及點選資料...等紀錄，以利提升本系統服務品質之用。<br><br>
+
+    三、資料之保護<br>
+    • 本系統主機均設有防火牆、防毒系統..等相關各項資訊安全設備及必要的安全防護措施，保護系統及您的個人資料。<br>
+    • 如因業務需要，委託其他單位提供服務時，本系統亦會嚴格要求遵守保密義務，並且採取必要檢查程序以確定其將確實遵守。<br>
+    • 本系統絕不會出售任何您的個人資料給他人。<br><br>
+
+    四、隱私權保護政策之修正<br>
+    本系統隱私權保護政策將因應需求隨時進行修正，修正後的條款將公告於系統上。<br>
+</p>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <title>YEN | 燈光測試</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3.0, user-scalable=1">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/common/css/tailwind.min.css">
+    <link rel="stylesheet" type="text/css" href="/common/css/page-common.css">
+    <link rel="stylesheet" type="text/css" href="/common/css/line-arrow.css">
+    <!-- JS -->
+    <script type="text/javascript" src="/common/js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="/common/js/sweetalert2@10.js"></script>
+    <script type="text/javascript" src="/common/js/SMethods.js"></script>
+    <script type="text/javascript" src="/app/js/Develop_Light.js"></script>
+    <style>
+        option {
+            text-indent: 5px;
+        }
+    </style>
+    <!-- When no JavaScript -->
+    <noscript>
+        <div class="noscriptmsg">
+            請開啟JavaScript瀏覽
+        </div>
+    </noscript>
+</head>
+<body class="flex flex-col flex-shrink-0 py-2 w-full h-screen text-white text-xl text-center bg-gray-700">
+<div class="flex flex-row px-4 py-2 items-center w-full">
+    <label for="inLightR" class="pr-4">R亮度</label>
+    <input id="inLightR" type="range" min="0" max="255" value="0" class="flex-grow" oninput="UpdateVal(this,'pValR')">
+    <p id="pValR" class="pl-4 w-12">0</p>
+</div>
+
+<div class="flex flex-row px-4 py-2 items-center w-full">
+    <label for="inLightG" class="pr-4">G亮度</label>
+    <input id="inLightG" type="range" min="0" max="255" value="0" class="flex-grow" oninput="UpdateVal(this,'pValG')">
+    <p id="pValG" class="pl-4 w-12">0</p>
+</div>
+
+<div class="flex flex-row px-4 py-2 items-center w-full">
+    <label for="inLightB" class="pr-4">B亮度</label>
+    <input id="inLightB" type="range" min="0" max="255" value="0" class="flex-grow" oninput="UpdateVal(this,'pValB')">
+    <p id="pValB" class="pl-4 w-12">0</p>
+</div>
+<button class="py-2 mx-4 my-2 text-xl text-white bg-blue-600 rounded-lg" onclick="Set_PreviewRGBLight()">送出指令
+</button>
+</body>
+</html>

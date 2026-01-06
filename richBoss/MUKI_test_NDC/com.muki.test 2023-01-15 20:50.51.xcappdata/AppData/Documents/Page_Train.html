@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <title>YEN | 訓練</title>
+    <!-- 常見此寫法 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- JavaScript -->
+    <script type="text/javascript" src="/common/js/sweetalert2@10.js"></script>
+    <script type="text/javascript" src="/common/js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="/common/js/SMethods.js"></script>
+    <script type="text/javascript" src="/common/js/pages/Page_VisionCommon.js"></script>
+    <script type="text/javascript" src="/app/js/Page_Train.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/common/css/page-common.css">
+    <link rel="stylesheet" type="text/css" href="/common/css/tailwind.min.css">
+    <style>
+
+    </style>
+    <!-- When no JavaScript -->
+    <noscript>
+        <div class="noscriptmsg">
+            請啟用JS功能
+        </div>
+    </noscript>
+</head>
+<body class="w-screen h-screen">
+<div class="flex flex-col items-center px-4 py-2 w-full h-full">
+    <!-- AI訓練 -->
+    <div class="flex flex-row flex-1 items-center w-full p-2 my-2 bg-white rounded-xl" onclick="GoPageHandler(1)">
+        <!-- icon -->
+        <div class="p-4 ml-2 mr-4 rounded-xl" style="background-color: #F1C0C0;">
+            <img class="object-contain" src="/app/image/Page_Train/ic_train_ai.png" alt="area"
+                 style="min-height:50px;max-height: 50px;">
+        </div>
+        <!-- Name & Description -->
+        <div class="flex flex-col flex-grow items-start px-2">
+            <p class="py-1 text-2xl font-medium">智慧訓練</p>
+            <p class="py-1 text-base font-medium text-gray-600">透過AI檢測<br>自動適配您的訓練</p>
+        </div>
+    </div>
+    <!-- 闖關訓練 -->
+    <div class="flex flex-row flex-1 items-center w-full p-2 my-2 bg-white rounded-xl" onclick="GoPageHandler(2)">
+        <!-- icon -->
+        <div class="p-4 ml-2 mr-4 rounded-xl" style="background-color: #C2D3D0;">
+            <img class="object-contain" src="/app/image/Page_Train/ic_train_stair.png" alt="area"
+                 style="min-height:50px;max-height: 50px;">
+        </div>
+        <!-- Name & Description -->
+        <div class="flex flex-col flex-grow items-start px-2">
+            <p class="py-1 text-2xl font-medium">闖關訓練</p>
+            <p class="py-1 text-base font-medium text-gray-600">進擊吧勇者<br>多種關卡待您破關</p>
+        </div>
+    </div>
+    <!-- 智慧檢測 -->
+    <div class="flex flex-row flex-1 items-center w-full p-2 my-2 bg-white rounded-xl" onclick="GoPageHandler(3)">
+        <!-- icon -->
+        <div class="p-4 ml-2 mr-4 rounded-xl" style="background-color: #C2C3A7;">
+            <img class="object-contain" src="/app/image/Page_Train/ic_train_smart.png" alt="area"
+                 style="min-height:50px;max-height: 50px;">
+        </div>
+        <!-- Name & Description -->
+        <div class="flex flex-col flex-grow items-start px-2">
+            <p class="py-1 text-2xl font-medium">智慧檢測</p>
+            <p class="py-1 text-base font-medium text-gray-600">AI大數據<br>檢測您的視覺融像</p>
+        </div>
+    </div>
+    <!-- 趣味遊戲 -->
+    <div class="flex flex-row flex-1 items-center w-full p-2 my-2 bg-white rounded-xl" onclick="GoPageHandler(4)">
+        <!-- icon -->
+        <div class="p-4 ml-2 mr-4 rounded-xl" style="background-color: #E7A79A;">
+            <img class="object-contain" src="/app/image/Page_Train/ic_train_game.png" alt="area"
+                 style="min-height:50px;max-height: 50px;">
+        </div>
+        <!-- Name & Description -->
+        <div class="flex flex-col flex-grow items-start px-2">
+            <p class="py-1 text-2xl font-medium">趣味遊戲</p>
+            <p class="py-1 text-base font-medium text-gray-600">經典好玩的打地鼠在這裡</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

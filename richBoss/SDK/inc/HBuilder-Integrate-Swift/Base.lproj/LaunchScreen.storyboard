@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController storyboardIdentifier="LaunchScreen" id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
+                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradient" translatesAutoresizingMaskIntoConstraints="NO" id="6LE-eM-OZb">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="358.5"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pattern" translatesAutoresizingMaskIntoConstraints="NO" id="ZkR-TB-1ZM">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="0mw-Vb-WuD">
+                                <rect key="frame" x="56" y="260" width="263" height="125"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="0mw-Vb-WuD" secondAttribute="height" multiplier="449:213" id="T6S-pX-R1f"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="company" translatesAutoresizingMaskIntoConstraints="NO" id="kJd-Rr-VoC">
+                                <rect key="frame" x="148.5" y="625.5" width="78" height="19.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="kJd-Rr-VoC" secondAttribute="height" multiplier="133:33" id="BYO-QG-iLe"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="0mw-Vb-WuD" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="449:640" id="35M-GC-Tie"/>
+                            <constraint firstItem="ZkR-TB-1ZM" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" id="7NO-Eu-QQG"/>
+                            <constraint firstItem="6LE-eM-OZb" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="612:1138" id="7bn-4W-F63"/>
+                            <constraint firstAttribute="trailing" secondItem="6LE-eM-OZb" secondAttribute="trailing" id="Glt-Mj-MQt"/>
+                            <constraint firstItem="kJd-Rr-VoC" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Gtt-0N-ixO"/>
+                            <constraint firstItem="6LE-eM-OZb" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="JIs-2Y-RZ0"/>
+                            <constraint firstItem="0mw-Vb-WuD" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="XPU-ad-axA"/>
+                            <constraint firstItem="kJd-Rr-VoC" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="bottom" multiplier="1084:1138" id="alA-QH-JFq"/>
+                            <constraint firstItem="0mw-Vb-WuD" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="bottom" multiplier="550:1138" id="biS-Qg-87I"/>
+                            <constraint firstItem="ZkR-TB-1ZM" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="eyB-jD-6cG"/>
+                            <constraint firstItem="ZkR-TB-1ZM" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="jXS-Te-BHh"/>
+                            <constraint firstItem="ZkR-TB-1ZM" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="qI1-fQ-x9D"/>
+                            <constraint firstItem="kJd-Rr-VoC" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="133:640" id="vAb-rf-lYr"/>
+                            <constraint firstItem="6LE-eM-OZb" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="zZv-QC-NbN"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="company" width="133" height="33"/>
+        <image name="gradient" width="640" height="613"/>
+        <image name="logo" width="449" height="213"/>
+        <image name="pattern" width="640" height="1138"/>
+    </resources>
+</document>

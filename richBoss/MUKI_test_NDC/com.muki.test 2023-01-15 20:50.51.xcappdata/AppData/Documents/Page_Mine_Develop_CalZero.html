@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <title>YEN | 校正零點</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3.0, user-scalable=1">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/common/css/tailwind.min.css">
+    <link rel="stylesheet" type="text/css" href="/common/css/page-common.css">
+    <link rel="stylesheet" type="text/css" href="/common/css/line-arrow.css">
+    <!-- JS -->
+    <script type="text/javascript" src="/common/js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="/common/js/sweetalert2@10.js"></script>
+    <script type="text/javascript" src="/common/js/SMethods.js"></script>
+    <script type="text/javascript" src="/app/js/Develop_CalZero.js"></script>
+    <style>
+        option {
+            text-indent: 5px;
+        }
+
+        .btStyle {
+            min-width: 60px;
+            min-height: 40px;
+        }
+    </style>
+    <!-- When no JavaScript -->
+    <noscript>
+        <div class="noscriptmsg">
+            請開啟JavaScript瀏覽
+        </div>
+    </noscript>
+</head>
+<body class="flex flex-col flex-shrink-0 py-2 w-full h-screen text-white text-xl text-center bg-gray-700">
+<!--當前資訊-->
+<div class="flex flex-col p-2 w-full items-center">
+    <p class="py-1 w-full rounded-lg bg-red-400 text-xl">當前資訊</p>
+    <div class="flex flex-row py-1 w-full items-center text-lg">
+        <p class="flex-1">馬達電源</p>
+        <p id="pCMotorPWR" class="flex-1">N</p>
+    </div>
+    <div class="flex flex-row w-full items-center text-lg">
+        <div class="flex flex-col flex-1 items-center">
+            <p class="">鏡片</p>
+            <p class="">CW</p>
+            <p class="">CPos</p>
+            <p class="">TPos</p>
+            <p class="">SRun</p>
+            <p class="">Origin</p>
+        </div>
+        <div class="flex flex-col flex-1 items-center">
+            <p class="">L1</p>
+            <p id="pL1_CW">N</p>
+            <p id="pL1_CPos">N</p>
+            <p id="pL1_TPos">N</p>
+            <p id="pL1_SRun">N</p>
+            <p id="pL1_Ori">N</p>
+        </div>
+        <div class="flex flex-col flex-1 items-center">
+            <p class="">R1</p>
+            <p id="pR1_CW">N</p>
+            <p id="pR1_CPos">N</p>
+            <p id="pR1_TPos">N</p>
+            <p id="pR1_SRun">N</p>
+            <p id="pR1_Ori">N</p>
+        </div>
+        <div class="flex flex-col flex-1 items-center">
+            <p class="">L2</p>
+            <p id="pL2_CW">N</p>
+            <p id="pL2_CPos">N</p>
+            <p id="pL2_TPos">N</p>
+            <p id="pL2_SRun">N</p>
+            <p id="pL2_Ori">N</p>
+        </div>
+        <div class="flex flex-col flex-1 items-center">
+            <p class="">R2</p>
+            <p id="pR2_CW">N</p>
+            <p id="pR2_CPos">N</p>
+            <p id="pR2_TPos">N</p>
+            <p id="pR2_SRun">N</p>
+            <p id="pR2_Ori">N</p>
+        </div>
+    </div>
+</div>
+<!--移動鏡片-->
+<div class="flex flex-col px-2 w-full items-center text-xl">
+    <p class="py-1 w-full rounded-lg bg-red-400">移動鏡片</p>
+    <div class="flex flex-row px-4 py-2 items-center justify-center text-2xl">
+        <label class="mx-4" for="slMotorId">選擇鏡片</label>
+        <select id="slMotorId" class="mx-4 px-4 py-1 rounded-lg bg-black border border-blue-600 outline-none">
+            <option value="1">L1</option>
+            <option value="2">R1</option>
+            <option value="3">L2</option>
+            <option value="4">R2</option>
+        </select>
+    </div>
+    <div class="flex flex-row px-4 py-2 items-center justify-center text-2xl">
+        <label class="mx-4" for="slFreq">選擇頻率</label>
+        <select id="slFreq" class="mx-4 px-4 py-1 rounded-lg bg-black border border-blue-600 outline-none">
+        </select>
+    </div>
+    <div class="flex flex-row px-4 py-2 items-center justify-center text-2xl">
+        <label class="mx-4" for="slMPower">選擇功率</label>
+        <select id="slMPower" class="mx-4 px-4 py-1 rounded-lg bg-black border border-blue-600 outline-none">
+        </select>
+    </div>
+    <div class="flex flex-row px-4 py-2 items-center text-2xl">
+        <p class="" style="min-width: 60px;">CCW</p>
+        <p class="" style="min-width: 100px;">步數</p>
+        <p class="" style="min-width: 60px;">CW</p>
+    </div>
+    <div class="flex flex-row px-4 py-2 items-center">
+        <button class="btStyle rounded-lg bg-blue-500" onclick="Set_MoveStepper(false,1)"> <</button>
+        <p style="min-width: 100px;">1</p>
+        <button class="btStyle rounded-lg bg-blue-500" onclick="Set_MoveStepper(true,1)"> ></button>
+    </div>
+    <div class="flex flex-row px-4 py-2 items-center">
+        <button class="btStyle rounded-lg bg-blue-500" onclick="Set_MoveStepper(false,10)"> <</button>
+        <p style="min-width: 100px;">10</p>
+        <button class="btStyle rounded-lg bg-blue-500" onclick="Set_MoveStepper(true,10)"> ></button>
+    </div>
+    <div class="flex flex-row px-4 py-2 items-center">
+        <button class="btStyle rounded-lg bg-blue-500" onclick="Set_MoveStepper(false,100)"> <</button>
+        <p style="min-width: 100px;">100</p>
+        <button class="btStyle rounded-lg bg-blue-500" onclick="Set_MoveStepper(true,100)"> ></button>
+    </div>
+    <div class="flex flex-row px-4 py-2 items-center">
+        <button class="btStyle rounded-lg bg-blue-500" onclick="Set_MoveStepper(false,1000)"> <</button>
+        <p style="min-width: 100px;">1000</p>
+        <button class="btStyle rounded-lg bg-blue-500" onclick="Set_MoveStepper(true,1000)"> ></button>
+    </div>
+    <div class="flex flex-row px-4 py-2 items-center">
+        <button class="btStyle rounded-lg bg-blue-500" onclick="Set_MoveStepper(false,10000)"> <</button>
+        <p style="min-width: 100px;">10000</p>
+        <button class="btStyle rounded-lg bg-blue-500" onclick="Set_MoveStepper(true,10000)"> ></button>
+    </div>
+</div>
+<!--功能按鈕-->
+<div class="flex flex-col px-2 items-center text-lg">
+    <button class="my-1.5 py-4 w-full rounded-lg bg-red-600" onclick="Set_CalZeroControl('Stop')">立即停止</button>
+    <button class="my-1.5 py-2 w-full rounded-lg bg-yellow-600" onclick="Set_CalZeroControl('Origin')">前往原點</button>
+    <button class="my-1.5 py-2 w-full rounded-lg bg-yellow-600" onclick="Set_CalZeroControl('Count')">自動計數</button>
+    <div class="flex flex-row my-1.5 items-center w-full">
+        <button class="flex-1 py-2 mr-1 rounded-lg bg-blue-600" onclick="Set_CalZeroControl('GoZero')">
+            前往零點
+        </button>
+        <button class="flex-1 py-2 ml-1 rounded-lg bg-blue-600" onclick="ConfirmSetZero()">
+            設為零點
+        </button>
+    </div>
+</div>
+</body>
+</html>

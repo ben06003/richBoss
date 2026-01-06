@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <title>YEN | 歡迎使用者</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3.0, user-scalable=1">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/common/css/tailwind.min.css">
+    <link rel="stylesheet" type="text/css" href="/common/css/page-common.css">
+    <!-- JS -->
+    <script type="text/javascript" src="/common/js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="/common/js/localforage.min.js"></script>
+    <script type="text/javascript" src="/common/js/sweetalert2@10.js"></script>
+    <script type="text/javascript" src="/common/js/SMethods.js"></script>
+    <script type="text/javascript" src="/app/js/Page_Welcome.js"></script>
+    <style>
+
+    </style>
+    <!-- When no JavaScript -->
+    <noscript>
+        <div class="noscriptmsg">
+            請開啟JavaScript瀏覽
+        </div>
+    </noscript>
+</head>
+<body class="flex flex-col flex-shrink-0 items-center justify-center w-screen h-screen"
+      style="background-image: url('/common/image/back_green.png')">
+<div id="divMain" class="flex flex-col items-center justify-center" style="display: none;">
+    <!--  Head  -->
+    <div class="rounded-full p-2 bg-white">
+        <img id="imgHead" class="object-contain rounded-full" alt="head" style="min-height:45mm;max-height: 45mm;"
+             src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=">
+    </div>
+    <p id="pWelcome" class="py-2 mt-2 text-gray-900 text-2xl tracking-widest"></p>
+    <p id="pHint" class="py-2 text-gray-700 text-base tracking-widest"></p>
+</div>
+</body>
+</html>

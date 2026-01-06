@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Socket Monitor</title>
+    <!-- NO CACHE-->
+    <meta http-equiv="Pragma" CONTENT="NO-CACHE">
+    <!-- IE可能不見得有效 -->
+    <meta http-equiv="Expires" CONTENT="0">
+    <!-- 設定成馬上就過期 -->
+    <meta http-equiv="Cache-Control" CONTENT="NO-CACHE">
+    <!-- 與第一行是同樣的作用 -->
+    <meta http-equiv="Expires" CONTENT="Mon, 22 Jul 2002 11:12:01 GMT">
+    <!-- 常見此寫法 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- JS -->
+    <script type="text/javascript" src="/common/js/sweetalert2@10.js"></script>
+    <script type="text/javascript" src="/common/js/SMethods.js"></script>
+    <script type="text/javascript" src="/common/js/socket/WebSocketHandler.js"></script>
+    <script type="text/javascript" src=/app/js/SocketMonitor.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/common/css/tailwind.min.css">
+</head>
+<body class="flex flex-col w-screen h-screen">
+<div class="flex flex-col px-2 w-screen h-full items-center overflow-y-scroll">
+    <div class="flex md:flex-row flex-col w-full items-center justify-center">
+        <button class="px-4 py-1 m-2 rounded bg-blue-300 min-w-max" onclick="InitSocketLogService()">
+            開啟 Web Socket Server
+        </button>
+        <button class="px-4 py-1 m-2 rounded bg-blue-300 min-w-max" onclick="SVCloseWebSocketServer()">
+            關閉 Web Socket Server
+        </button>
+    </div>
+    <button class="px-4 py-1 m-2 rounded bg-gray-300" onclick="ClearLog()">
+        清除Log
+    </button>
+    <p class="p-2 w-full text-gray-900 text-sm overflow-clip" id="pContent">
+
+    </p>
+</div>
+</body>
+</html>

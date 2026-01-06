@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <title>YEN | 連接裝置</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/common/css/tailwind.min.css">
+    <link rel="stylesheet" type="text/css" href="/common/css/page-common.css">
+    <!-- JS -->
+    <script type="text/javascript" src="/common/js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="/common/js/localforage.min.js"></script>
+    <script type="text/javascript" src="/common/js/sweetalert2@10.js"></script>
+    <script type="text/javascript" src="/common/js/SMethods.js"></script>
+    <script type="text/javascript" src="/common/js/lottie-player.js"></script>
+    <script type="text/javascript" src="/common/js/jquery.circle-progress.min.js"></script>
+    <script type="text/javascript" src="/app/js/Page_Connect.js"></script>
+    <style>
+        .circle-progress {
+            width: 44px;
+            height: auto;
+        }
+
+        .circle-progress-value {
+            stroke-width: 10px;
+            stroke: hsl(39, 100%, 50%);
+        }
+
+        .circle-progress-circle {
+            stroke-width: 10px;
+            stroke: #DDDDDD;
+        }
+
+        .circle-progress-text {
+            fill: #333333;
+            font-size: 32px;
+        }
+
+    </style>
+    <!-- When no JavaScript -->
+    <noscript>
+        <div class="noscriptmsg">
+            請開啟JavaScript瀏覽
+        </div>
+    </noscript>
+</head>
+<body class="flex flex-col flex-shrink-0 items-center w-full h-screen"
+      style="background-image: url('/common/image/back_green.png')">
+<!--Header-->
+<div class="flex flex-row items-center justify-center py-2 w-full bg-white relative">
+    <img class="absolute py-2 object-contain" src="/common/image/ic_back_green.png"
+         style="left: 10px;top:calc(50% - 18px);max-height: 36px;"
+         onclick="location.href = '/app/html/Page_Main.html'" alt="back">
+    <p class="text-gray-900 text-2xl tracking-widest">連接裝置</p>
+</div>
+<div class="flex flex-col flex-grow items-center w-full">
+    <!--Product-->
+    <div class="flex flex-col items-center justify-center" style="height: 40%">
+        <img class="py-2 w-full object-contain" src="/app/image/ConnectDevice/img_product.png" alt="product">
+    </div>
+    <!--Device List-->
+    <div class="flex flex-col flex-grow items-center w-full bg-white rounded-t-3xl" style="height: 60%;">
+        <!--Searching-->
+        <div class="flex flex-row items-center justify-center">
+            <p class="py-2 text-gray-900 text-2xl tracking-widest" style="margin-left: 40px;">搜尋中</p>
+            <lottie-player id="lpLoading"
+                           src="/common/anim/ani_loading_sm.json"
+                           speed="0.8"
+                           style="width: 50px; height: 50px;" loop autoplay></lottie-player>
+        </div>
+        <!--Device List-->
+        <div id="divDeviceList" class="flex flex-col items-center px-2 w-full">
+            <!-- Device -->
+            <div id="divDevice" class="flex flex-col items-center w-full">
+                <div class="flex flex-row items-center py-2 w-full text-gray-900 text-lg tracking-widest">
+                    <p id="pDeviceId" class="flex-grow px-2 text-base"></p>
+                    <div id="divProgress" class="progress mx-2"></div>
+                    <button id="btDevice" class="btPink mx-2 min-w-max">
+                        連接
+                    </button>
+                </div>
+                <!--Divider -->
+                <div class="w-full bg-gray-300" style="min-height: 1px;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

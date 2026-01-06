@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <title>YEN | 實驗功能</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3.0, user-scalable=1">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/common/css/tailwind.min.css">
+    <link rel="stylesheet" type="text/css" href="/common/css/page-common.css">
+    <!-- JS -->
+    <script type="text/javascript" src="/common/js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="/common/js/sweetalert2@10.js"></script>
+    <script type="text/javascript" src="/common/js/SMethods.js"></script>
+    <script type="text/javascript" src="/app/js/Page_Mine_Exp.js"></script>
+    <style>
+        option {
+            text-indent: 5px;
+        }
+
+        .btStyle {
+            color: #FFFFFF;
+            font-size: 20px;
+            padding: 5px;
+            margin: 8px 0;
+            width: 100%;
+            height: 60px;
+            border-radius: 5px;
+        }
+    </style>
+    <!-- When no JavaScript -->
+    <noscript>
+        <div class="noscriptmsg">
+            請開啟JavaScript瀏覽
+        </div>
+    </noscript>
+</head>
+<body class="flex flex-col flex-shrink-0 w-full h-screen text-2xl overflow-y-scroll"
+      style="padding:5px;">
+
+<button class="btStyle bg-blue-500" onclick="GoPage('Exp_TrainStairs',this)">視覺訓練</button>
+<button class="btStyle bg-blue-500" onclick="GoPage('Exp_BreakPointTest',this)">視覺檢測</button>
+<button class="btStyle bg-blue-500" onclick="GoPage('Exp_Experimental',this)">實驗模式</button>
+<button class="btStyle bg-blue-500" onclick="GoPage('Exp_Vision',this)">訓練模式</button>
+<button class="btStyle bg-blue-500" onclick="GoPage('Exp_VisionFast',this)">快速訓練</button>
+<button class="btStyle bg-blue-500" onclick="GoPage('Exp_SlopTest',this)">斜位檢測</button>
+<button class="btStyle bg-blue-500" onclick="GoPage('Exp_GatherTest',this)">聚散檢測</button>
+<button class="btStyle bg-blue-500" onclick="GoPage('Exp_SelfInspection',this)">自主檢查</button>
+</body>
+</html>

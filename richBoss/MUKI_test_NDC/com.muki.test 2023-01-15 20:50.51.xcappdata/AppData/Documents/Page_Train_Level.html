@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <title>YEN | 闖關訓練</title>
+    <!-- 常見此寫法 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- JavaScript -->
+    <script type="text/javascript" src="/common/js/sweetalert2@10.js"></script>
+    <script type="text/javascript" src="/common/js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="/common/js/SMethods.js"></script>
+    <script type="text/javascript" src="/common/js/pages/Page_VisionCommon.js"></script>
+    <script type="text/javascript" src="/app/js/Page_Train_Level.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/common/css/page-common.css">
+    <link rel="stylesheet" type="text/css" href="/common/css/tailwind.min.css">
+    <style>
+        .imgIcLevel {
+            position: absolute;
+            min-width: 100px;
+            max-width: 100px;
+            min-height: 100px;
+            max-height: 100px;
+        }
+
+        .divLevel {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-items: center;
+            justify-content: center;
+            min-width: 100px;
+            max-width: 100px;
+            min-height: 100px;
+            max-height: 100px;
+            background-size: contain;
+            background-image: url("/app/image/Page_Train_Level/ic_level.png");
+        }
+
+        .pLevel {
+            font-weight: bold;
+            font-size: 25px;
+            color: #333333;
+            letter-spacing: 0.08em;
+        }
+    </style>
+    <!-- When no JavaScript -->
+    <noscript>
+        <div class="noscriptmsg">
+            請啟用JS功能
+        </div>
+    </noscript>
+</head>
+<body class="w-screen h-screen">
+<div class="relative flex flex-col items-center px-4 py-2 w-full overflow-y-scroll">
+    <img class="object-contain" src="/app/image/Page_Train_Level/back_level.png" alt="map">
+    <p id="pSuggest" class="absolute text-center text-2xl text-gray-800 tracking-widest invisible"
+       style="left: calc(50% - 125px);top:2.5%;min-width: 250px;line-height: 35px;"></p>
+    <!-- 條1 -->
+    <div class="divLevel" style="left: calc(22% - 50px);top:calc(22% - 50px);" onclick="SelectLevel(1)">
+        <p class="pLevel">關卡1</p>
+    </div>
+    <div class="divLevel" style="left: calc(42% - 50px);top:calc(22% - 50px);" onclick="SelectLevel(2)">
+        <p class="pLevel">關卡2</p>
+    </div>
+    <div class="divLevel" style="left: calc(62% - 50px);top:calc(22% - 50px);" onclick="SelectLevel(3)">
+        <p class="pLevel">關卡3</p>
+    </div>
+    <div class="divLevel" style="left: calc(82% - 50px);top:calc(22% - 50px);" onclick="SelectLevel(4)">
+        <p class="pLevel">關卡4</p>
+    </div>
+    <!-- 條2 -->
+    <div class="divLevel" style="left: calc(82% - 50px);top:calc(42% - 50px);" onclick="SelectLevel(5)">
+        <p class="pLevel">關卡5</p>
+    </div>
+    <div class="divLevel" style="left: calc(62% - 50px);top:calc(42% - 50px);" onclick="SelectLevel(6)">
+        <p class="pLevel">關卡6</p>
+    </div>
+    <div class="divLevel" style="left: calc(42% - 50px);top:calc(42% - 50px);" onclick="SelectLevel(7)">
+        <p class="pLevel">關卡7</p>
+    </div>
+    <div class="divLevel" style="left: calc(22% - 50px);top:calc(42% - 50px);" onclick="SelectLevel(8)">
+        <p class="pLevel">關卡8</p>
+    </div>
+    <!-- 條3 -->
+    <div class="divLevel" style="left: calc(22% - 50px);top:calc(63% - 50px);" onclick="SelectLevel(9)">
+        <p class="pLevel">關卡9</p>
+    </div>
+    <div class="divLevel" style="left: calc(42% - 50px);top:calc(63% - 50px);" onclick="SelectLevel(10)">
+        <p class="pLevel">關卡10</p>
+    </div>
+    <div class="divLevel" style="left: calc(62% - 50px);top:calc(63% - 50px);" onclick="SelectLevel(11)">
+        <p class="pLevel">關卡11</p>
+    </div>
+    <div class="divLevel" style="left: calc(82% - 50px);top:calc(63% - 50px);" onclick="SelectLevel(12)">
+        <p class="pLevel">關卡12</p>
+    </div>
+    <!-- 條4 -->
+    <div class="divLevel" style="left: calc(82% - 50px);top:calc(84% - 50px);" onclick="SelectLevel(13)">
+        <p class="pLevel">關卡13</p>
+    </div>
+    <div class="divLevel" style="left: calc(62% - 50px);top:calc(84% - 50px);" onclick="SelectLevel(14)">
+        <p class="pLevel">關卡14</p>
+    </div>
+    <div class="divLevel" style="left: calc(42% - 50px);top:calc(84% - 50px);" onclick="SelectLevel(15)">
+        <p class="pLevel">關卡15</p>
+    </div>
+    <div class="divLevel" style="left: calc(22% - 50px);top:calc(84% - 50px);" onclick="SelectLevel(16)">
+        <p class="pLevel">關卡16</p>
+    </div>
+</div>
+</body>
+</html>
