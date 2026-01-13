@@ -16,7 +16,7 @@ protocol VerifyCallback {
 
 class IAPVerifier {
     private let md5Key = "Bw7$myVk@MJtdy^q"
-    private let apiUrl = "https://goapi.richboss.net/v4/CashFlow/IAP/Order"
+    private let apiUrl = "https://goapi.sf2dev.com/v4/CashFlow/IAP/Order"
     
     func verifyPurchaseWithBackend(purchase: PurchaseInfo, completion: @escaping (Bool) -> Void) {
         let authorization = md5("\(md5Key):\(purchase.orderNo)")

@@ -93,7 +93,7 @@
 		185512172C6B30A600F97A71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		240EEA0F1EE96B1800FF46BA /* liblibPDRCore.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = liblibPDRCore.a; path = ../../SDK/Libs/liblibPDRCore.a; sourceTree = "<group>"; };
 		240EEA111EE96B2700FF46BA /* liblibPGInvocation.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = liblibPGInvocation.a; path = ../../SDK/Libs/liblibPGInvocation.a; sourceTree = "<group>"; };
-		2429819F1ECC3AA4009E0F26 /* 少年董.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "少年董.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2429819F1ECC3AA4009E0F26 /* 少年董T.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "少年董T.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		242981A21ECC3AA4009E0F26 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		242981A71ECC3AA4009E0F26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		242981A91ECC3AA4009E0F26 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -239,7 +239,7 @@
 		242981A01ECC3AA4009E0F26 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2429819F1ECC3AA4009E0F26 /* 少年董.app */,
+				2429819F1ECC3AA4009E0F26 /* 少年董T.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -437,7 +437,7 @@
 			);
 			name = MUKI_test_NDC;
 			productName = MUKI_test_NDC;
-			productReference = 2429819F1ECC3AA4009E0F26 /* 少年董.app */;
+			productReference = 2429819F1ECC3AA4009E0F26 /* 少年董T.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -813,7 +813,7 @@
 				CODE_SIGN_ENTITLEMENTS = MUKI_test_NDC/MUKI_test_NDC.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 3W5A2P3W5W;
 				ENABLE_BITCODE = NO;
@@ -828,7 +828,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = MUKI_test_NDC/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "少年董";
+				INFOPLIST_KEY_CFBundleDisplayName = "少年董T";
 				IPHONEOS_DEPLOYMENT_TARGET = 13;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -838,8 +838,8 @@
 				MARKETING_VERSION = 1.0.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.soga.richboss;
-				PRODUCT_NAME = "少年董";
+				PRODUCT_BUNDLE_IDENTIFIER = com.soga.richboss.test;
+				PRODUCT_NAME = "少年董T";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/MUKI_test_NDC/Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
@@ -858,7 +858,7 @@
 				CODE_SIGN_ENTITLEMENTS = MUKI_test_NDC/MUKI_test_NDC.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 3W5A2P3W5W;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -871,7 +871,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = MUKI_test_NDC/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "少年董";
+				INFOPLIST_KEY_CFBundleDisplayName = "少年董T";
 				IPHONEOS_DEPLOYMENT_TARGET = 13;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -881,8 +881,8 @@
 				MARKETING_VERSION = 1.0.0;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.soga.richboss;
-				PRODUCT_NAME = "少年董";
+				PRODUCT_BUNDLE_IDENTIFIER = com.soga.richboss.test;
+				PRODUCT_NAME = "少年董T";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/MUKI_test_NDC/Header.h";

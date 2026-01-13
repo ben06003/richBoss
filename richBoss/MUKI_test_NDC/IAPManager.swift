@@ -22,12 +22,12 @@ class IAPManager: NSObject {
     fileprivate var productRequest: SKProductsRequest!
     //        ["3000coin","100coin","300coin","500coin","900coin","1500coin","50coin"]
 
-//    func getProductIDs() -> [String] {
-//        ["test30","richboss.33.test","richboss.170.test","richboss.330.test","richboss.670.test","richboss.1090.test","richboss.1690.test","richboss.3290.test","richboss.week.card.test","richboss.month.card.test","richboss.super.month.card.test"]
-//    }
     func getProductIDs() -> [String] {
-        ["richboss.33","richboss.170","richboss.330","richboss.670","richboss.1090","richboss.1690","richboss.3290","richboss.week.card","richboss.month.card","richboss.super.month.card"]
+        ["test30","richboss.33.test","richboss.170.test","richboss.330.test","richboss.670.test","richboss.1090.test","richboss.1690.test","richboss.3290.test","richboss.week.card.test","richboss.month.card.test","richboss.super.month.card.test"]
     }
+//    func getProductIDs() -> [String] {
+//        ["richboss.33","richboss.170","richboss.330","richboss.670","richboss.1090","richboss.1690","richboss.3290","richboss.week.card","richboss.month.card","richboss.super.month.card"]
+//    }
     
     var productIndexs:[String] = []
     
@@ -111,7 +111,7 @@ extension IAPManager: SKPaymentTransactionObserver {
                     let purchase = PurchaseInfo(
                         orderNo: orderID ?? "",
                         token: receiptData,
-                        packageName: "com.soga.richboss",
+                        packageName: "com.soga.richboss.test",
                         productId: $0.payment.productIdentifier
                     )
 //                    print("purchase:\(purchase)")

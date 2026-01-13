@@ -446,7 +446,7 @@ class WebViewController: BaseVC,Transform,WKUIDelegate,WKScriptMessageHandler{
         
         var stRect = self.view.frame
 	
-        let _url = "https://richboss.net/"
+        let _url = "https://sf2dev.com/"
 
         let baseURL_arr = _url.components(separatedBy: "/")
         baseUrl = baseURL_arr[0]+"/"+baseURL_arr[1]+"/"+baseURL_arr[2]
